@@ -11,11 +11,6 @@ fi
 
 (puts-step "Checking for conda env" && conda env &> /dev/null) || conda update conda --quiet --yes | indent
 
-if [ -f conda-requirements.txt ]; then
-    puts-step "Installing dependencies using Conda"
-    conda install --file conda-requirements.txt --yes
-fi
-
 if [ -f environment.yml ]; then
     puts-step "Creating conda environment"
     # TODO: Use update if its already there
