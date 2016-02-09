@@ -20,6 +20,4 @@ fi
 
 # Clean up the installation environment .
 # TODO Determine if removing packages might be bad here
-conda install nomkl 
-conda remove mkl mkl-service
 conda clean -pt --yes > /dev/null
