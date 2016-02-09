@@ -5,8 +5,6 @@ if [ ! -d /app/.heroku/miniconda ]; then
     curl -Os http://repo.continuum.io/miniconda/Miniconda3-${CONDA_VERSION}-Linux-x86_64.sh
     bash Miniconda3-${CONDA_VERSION}-Linux-x86_64.sh -p /app/.heroku/miniconda/ -b | indent
     rm -fr Miniconda3-${CONDA_VERSION}-Linux-x86_64.sh
-
-    conda update conda --quiet --yes | indent
 fi
 
 (puts-step "Checking for conda env" && conda env &> /dev/null) || conda update conda --quiet --yes | indent
